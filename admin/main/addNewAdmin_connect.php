@@ -16,7 +16,7 @@ VALUES ( '$admin_fname', '$admin_lname', '$admin_contact_no', '$admin_mail' , '$
 // echo $sql;
 if ($mysqli->query($sql) === TRUE) {
         echo '<script type="text/javascript">
-                window.onload = function () { alert("Registered Successfully !!"); location.replace("index.php") }
+                window.onload = function () { alert("Added Successfully !!"); location.replace("index.php") }
                 </script>';
         //echo "<script>alert('Enrolled Successfully !!! \n Your temporary id is: $last_id')</script>";
     } else {
