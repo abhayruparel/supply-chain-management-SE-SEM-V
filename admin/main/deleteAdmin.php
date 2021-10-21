@@ -12,9 +12,8 @@ $sql = "DELETE FROM admin_details WHERE id='" . $id . "'";
 
 if ($mysqli->query($sql) === TRUE) {
     echo '<script type="text/javascript">
-                window.onload = function () { alert("Registered Successfully !!"); location.replace("display_admins.php") }
+                window.onload = function () { alert("Deleted Successfully !!"); location.replace("display_admins.php") }
                 </script>';
-    //echo "<script>alert('Enrolled Successfully !!! \n Your temporary id is: $last_id')</script>";
 } else {
     echo "ERROR: Could not prepare query: $sql. " . $mysqli->error;
 }

@@ -13,6 +13,7 @@ include("header.php");
     <link href="../assets/bower_components/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
+    <title>Admin | SCMS</title>
 </head>
 
 <body>

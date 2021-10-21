@@ -88,12 +88,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
         // Prepare an insert statement
-        $sql = "INSERT INTO admin_details (fname,mail, passwd) VALUES (?,?, ?)";
+        $sql = "INSERT INTO admin_details (admin_fname, admin_mail, admin_passwd) VALUES (?,?, ?)";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "sss", $param_name, $param_username, $param_password);
-
+            echo "Success";
             // Set parameters
             $param_username = $admin_mail;
             $param_password = $password;
@@ -102,8 +102,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
-                // Redirect to login page
-                header("location: login.php");
+                // Redirect to view admins page
+                echo "Success";
+                echo '<script type="text/javascript">
+                window.onload = function () { alert("added Successfully !!"); location.replace("display_admins.php") }
+                </script>';
+                // header("location: display_admins.php");
             } else {
                 echo "Something went wrong. Please try again later.";
             }

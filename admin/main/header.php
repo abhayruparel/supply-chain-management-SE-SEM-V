@@ -84,6 +84,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <li>
                         <a href="editProfile.php" class="waves-effect"><b>Profile</b></a>
                     </li>
+                    <li>
+                        <a href="viewProducts.php" class="waves-effect"><b>View Products</b></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->

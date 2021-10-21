@@ -53,33 +53,38 @@ include("header.php");
 </head>
 
 <div id="page-wrapper">
-
-
-    <!-- PHP CODE INTEGRATION display_counsellor_alloted.php-->
     <?php
     $con = mysqli_connect("localhost", "root", "", "supply_chain");
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     }
 
-    $result = mysqli_query($con, "SELECT * FROM admin_details");
+    $result = mysqli_query($con, "SELECT * FROM products");
 
     echo "<table border='1' id='st'>
             <tr>
                 <th>ID</th>
-                <th>Admin Name</th>
-                <th>Contact Number</th>
-                <th>E-Mail ID</th>
-                <th>Action </th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Date Added </th>
+                <th>img path </th>
+                <th>Quantity </th>
+                <th>Seller ID </th>
             </tr>";
 
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['admin_fname'] . " " . $row["admin_lname"] . "</td>";
-        echo "<td>" . $row['admin_contact_no'] . "</td>";
-        echo "<td>" . $row['admin_mail'] . "</td>";
-        echo "<td><a href=\"deleteAdmin.php?id=" . $row['id'] . "\">Delete</a></td>";
+        echo "<td>" . $row['name'] . "</td>";
+        echo "<td>" . $row['description'] . "</td>";
+        echo "<td>" . $row['price'] . "</td>";
+        echo "<td>" . $row['date_added'] . "</td>";
+        echo "<td>" . $row['img'] . "</td>";
+        echo "<td>" . $row['quantity'] . "</td>";
+        echo "<td>" . $row['seller_id'] . "</td>";
+
+        // echo "<td><a href=\"deleteAdmin.php?id=" . $row['id'] . "\">Delete</a></td>";
         echo "</tr>";
     }
     echo "</table>";
