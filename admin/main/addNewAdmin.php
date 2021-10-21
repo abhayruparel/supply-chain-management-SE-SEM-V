@@ -13,7 +13,8 @@ include("header.php");
     <link href="../assets/bower_components/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
-  
+    <title>Admin | SCMS</title>
+
 </head>
 
 <body>
@@ -21,45 +22,11 @@ include("header.php");
     <!-- <br> -->
 
     <div id="page-wrapper">
-        <!-- PHP CODE INTEGRATION addNewAdmin.php-->
-        <?php
-        $con = mysqli_connect("localhost", "root", "", "admission_process");
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        }
-
-        // $result = mysqli_query($con, "SELECT * FROM counsellor_alloted");
-
-        // echo "<table border='1' id='st'>
-        //         <tr>
-        //             <!--th>ID</th-->
-        //             <th>couns_alloted_id</th>
-        //             <th>stu_id</th>
-        //             <th>couns_id</th>
-        //             <!--th>couns_alloted_date</th>
-        //             <th>couns_alloted_time</th-->
-        //         </tr>";
-
-        // while ($row = mysqli_fetch_array($result)) {
-        //     echo "<tr>";
-        //     // echo "<td>" . $row['id'] . "</td>";
-        //     echo "<td>" . $row['couns_alloted_id'] . "</td>";
-        //     echo "<td>" . $row['stu_id'] . "</td>";
-        //     echo "<td>" . $row['couns_id'] . "</td>";
-        //     // echo "<td>" . $row['couns_alloted_date'] . "</td>";
-        //     // echo "<td>" . $row['couns_alloted_time'] . "</td>";
-        //     echo "</tr>";
-        // }
-        // echo "</table>";
-
-        mysqli_close($con);
-        ?>
-
         <div class="col-md-12">
             <hr>
             <h3>Admin Registration Page</h3>
             <p class="text-muted m-b-30 font-13"> Add admin details</p>
-            <form class="form-horizontal" action="addNewAdmin_connect.php" method="POST">
+            <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-3 control-label">First Name</label>
                     <div class="col-sm-9">

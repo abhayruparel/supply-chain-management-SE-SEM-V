@@ -76,7 +76,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         <a href="index.php" class="waves-effect"><b>Dashbord</b></a>
                     </li>
                     <li>
-                        <a href="addNewAdmin.php" class="waves-effect"><b>Add new admin</b></a>
+                        <a href="addNewAdmin_connect.php" class="waves-effect"><b>Add new admin</b></a>
                     </li>
                     <li>
                         <a href="display_admins.php" class="waves-effect"><b>View Admins</b></a>
