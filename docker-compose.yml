@@ -12,7 +12,7 @@ services:
       - MYSQL_TCP_PORT=3306
     volumes:
       - datafiles:/var/lib/mysql
-    restart: always
+    restart: unless-stopped
     ports:
       - 3306:3306
 
@@ -33,4 +33,4 @@ services:
       - 80:80
       - 8083:443
     depends_on:
-      - mysql
+      - db
